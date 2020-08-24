@@ -1,0 +1,21 @@
+.nav__wrapper {
+  grid-area: n;
+  background-color: #e1e1e1;
+}
+
+.nav__wrapper ul {
+  padding: 0;
+}
+
+.nav__wrapper ul li {
+  list-style: none;
+}
+
+.item a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.item .active {
+	color: #000;
+}
