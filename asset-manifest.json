@@ -5,8 +5,8 @@
     "main.css": "/react-js-way-of-samurai/static/css/main.bb2181e6.chunk.css",
     "main.js": "/react-js-way-of-samurai/static/js/main.fdccd24c.chunk.js",
     "main.js.map": "/react-js-way-of-samurai/static/js/main.fdccd24c.chunk.js.map",
-    "runtime-main.js": "/react-js-way-of-samurai/static/js/runtime-main.767a97c2.js",
-    "runtime-main.js.map": "/react-js-way-of-samurai/static/js/runtime-main.767a97c2.js.map",
+    "runtime-main.js": "/react-js-way-of-samurai/static/js/runtime-main.2e0c9b71.js",
+    "runtime-main.js.map": "/react-js-way-of-samurai/static/js/runtime-main.2e0c9b71.js.map",
     "static/js/3.e33ce5ea.chunk.js": "/react-js-way-of-samurai/static/js/3.e33ce5ea.chunk.js",
     "static/js/3.e33ce5ea.chunk.js.map": "/react-js-way-of-samurai/static/js/3.e33ce5ea.chunk.js.map",
     "static/css/4.5d5cd587.chunk.css": "/react-js-way-of-samurai/static/css/4.5d5cd587.chunk.css",
@@ -16,8 +16,8 @@
     "static/js/5.b8df7018.chunk.js": "/react-js-way-of-samurai/static/js/5.b8df7018.chunk.js",
     "static/js/5.b8df7018.chunk.js.map": "/react-js-way-of-samurai/static/js/5.b8df7018.chunk.js.map",
     "static/css/6.b36a987e.chunk.css": "/react-js-way-of-samurai/static/css/6.b36a987e.chunk.css",
-    "static/js/6.b67f8325.chunk.js": "/react-js-way-of-samurai/static/js/6.b67f8325.chunk.js",
-    "static/js/6.b67f8325.chunk.js.map": "/react-js-way-of-samurai/static/js/6.b67f8325.chunk.js.map",
+    "static/js/6.a5bb1447.chunk.js": "/react-js-way-of-samurai/static/js/6.a5bb1447.chunk.js",
+    "static/js/6.a5bb1447.chunk.js.map": "/react-js-way-of-samurai/static/js/6.a5bb1447.chunk.js.map",
     "static/css/7.57ba0fc6.chunk.css": "/react-js-way-of-samurai/static/css/7.57ba0fc6.chunk.css",
     "static/js/7.e951072a.chunk.js": "/react-js-way-of-samurai/static/js/7.e951072a.chunk.js",
     "static/js/7.e951072a.chunk.js.map": "/react-js-way-of-samurai/static/js/7.e951072a.chunk.js.map",
@@ -32,7 +32,7 @@
     "static/media/1.10da3761.gif": "/react-js-way-of-samurai/static/media/1.10da3761.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.767a97c2.js",
+    "static/js/runtime-main.2e0c9b71.js",
     "static/js/3.e33ce5ea.chunk.js",
     "static/css/main.bb2181e6.chunk.css",
     "static/js/main.fdccd24c.chunk.js"
