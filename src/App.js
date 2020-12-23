@@ -1,37 +1,83 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header/Header';
+import React, {Suspense} from 'react';
+import Style from './App.module.css';
 import Navbar from './components/Navbar/Navbar';
-import Sidebar from './components/Sidebar/Sidebar';
-import Profile from './components/Profile/Profile';
-//import Dialogs from './components/Dialogs/Dialogs';
-import UsersContainer from './components/Users/UsersContainer';
-import News from './components/News/News';
-import Music from './components/Music/Music';
-import Settings from './components/Settings/Settings';
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import {BrowserRouter, Route} from 'react-router-dom';
+import HeaderContainer from "./components/Header/HeaderContainer";
+import {connect, Provider} from "react-redux";
+import {BrowserRouter, Route, withRouter, Switch, Redirect} from 'react-router-dom';
+import {compose} from "redux";
+import {getErrorNull, getGlobalError, initializeApp} from "./redux/app-reducer";
+import Preloader from "./components/common/Preloader/Preloader";
+import store from "./redux/redux-store";
+import {withSuspense} from "./hoc/withSuspense";
+
+const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
+const UsersContainer = React.lazy(() => import("./components/Users/UsersContainer"));
+const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
+const Login = React.lazy(() => import("./components/Login/Login"));
+
 //exact указывается в ссылке перед path и работает при точном совпадении URL.
 /*<Route exact path='/dialogs' render={ () => <Dialogs Dialogs = {props.Dialogs} Messages = {props.Messages} />} />*/
-        //<Sidebar  State = {props.State.SideBar} />+
-function App(props) {
-  // debugger;
-  return (
-    <BrowserRouter>
-      <main className = "app-wrapper">
-        <Header />
-        <Navbar />
-        <div className = "app-content-wrapper">
-          <Route path='/dialogs' render={ () => <DialogsContainer />} />
-          <Route path='/profile' render={ () => <Profile />} />
-          <Route path='/users' render={ () => <UsersContainer />} />
-          <Route path='/news' render={ () => <News />} />
-          <Route path='/music' render={ () => <Music />} />
-          <Route path='/settings' render={ () => <Settings />} />
-        </div>
-      </main>
-    </BrowserRouter>
-  );
+class App extends React.Component {
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        let promise = promiseRejectionEvent.reason.message
+        this.props.getGlobalError(promise);
+    }
+    componentDidMount() {
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+        this.props.initializeApp();
+    }
+
+    render() {
+        if (!this.props.initialized) {
+            return <Preloader/>
+        }
+
+        const closeError = () => {
+            document.querySelector('.error-wrap');
+            this.props.getErrorNull();
+        }
+
+        return (
+            <main className={Style.appWrapper}>
+                {this.props.getError &&
+                <div className={Style.errorWrap} onClick={closeError}>
+                    <div>{this.props.getError}</div>
+                </div>
+                }
+                <HeaderContainer/>
+                <Navbar/>
+                <div className={Style.appContentWrapper}>
+                    <Switch>
+                        <Redirect exact from='/' to='/profile'/>
+                        <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
+                        <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
+                        <Route path='/users' render={withSuspense(UsersContainer)}/>
+                        <Route path='/login' render={withSuspense(Login)}/>
+                        <Route path='*' render={() => <div>ERROR 404! PAGE NOT FOUND!</div>}/>
+                    </Switch>
+                </div>
+            </main>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    initialized: state.app.initialized,
+    getError: state.app.globalError
+});
+
+let AppContainer = compose(
+    withRouter,
+    connect(mapStateToProps, {initializeApp, getGlobalError, getErrorNull}))(App);
+
+let SamuraiJSApp = () => {
+    return (
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </BrowserRouter>
+    )
+}
+
+export default SamuraiJSApp;

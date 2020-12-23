@@ -1,8 +1,32 @@
 .header__wrapper {
-  grid-area: h;
-  background-color: #e9e9e9;
+    grid-area: h;
+    background-color: #b0bcd0;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoHeader {
+    display: flex;
+    align-items: center;
+}
+
+.logoHeader h1 {
+    margin: 0;
 }
 
 .header__wrapper img {
-  width: 50px;
+    width: 40px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    color: #010101;
 }

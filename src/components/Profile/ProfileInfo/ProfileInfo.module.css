@@ -1,3 +1,84 @@
-.description__block {
-	padding: 10px;
+* {
+    color: #2d2d2d;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+b {
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #bec2ca;
+    font-weight: 100;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #bec2ca;
+
+}
+
+.descriptionBlock {
+    display: flex;
+}
+
+.avatarWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatarWrap img {
+    border-radius: 10px;
+    width: 300px;
+}
+
+.avatarWrap input {
+    margin-top: 20px;
+    width: 87px;
+}
+
+.statusWrap {
+    margin-bottom: 10px;
+}
+
+.profileInfoWrap {
+    margin-top: 32px;
+    margin-left: 20px;
+}
+
+.profileInfoContent {
+    display: flex;
+}
+
+.aboutMeWrap {
+    margin-right: 20px;
 }

@@ -1,21 +1,35 @@
 .nav__wrapper {
-  grid-area: n;
-  background-color: #e1e1e1;
+    grid-area: n;
+    background-color: #d0d8e6;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .nav__wrapper ul {
-  padding: 0;
+    padding: 0;
 }
 
 .nav__wrapper ul li {
-  list-style: none;
+    list-style: none;
+    line-height: 30px;
+    margin-bottom: 5px;
 }
 
 .item a {
-	color: #fff;
-	text-decoration: none;
+    color: #2d2d2d;
+    text-decoration: none;
+    display: block;
+    transition: background-color .3s ease-in-out;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.item a:hover {
+    background-color: #96a3b9;
+    transition: background-color .3s ease-in-out;
 }
 
 .item .active {
-	color: #000;
+    color: #fff;
+    background-color: #96a3b9;
 }

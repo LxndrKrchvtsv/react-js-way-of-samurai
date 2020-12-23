@@ -3,6 +3,27 @@
 	height: 100px;
 }
 
-.selectedPage {
-	font-weight: bold;
+.userWrap {
+	display: flex;
+}
+
+.userView {
+	text-align: center;
+	margin-right: 10px;
+}
+
+.userView div {
+	margin-bottom: 10px;
+}
+
+.userView div a img {
+	border-radius: 10px;
+}
+
+.usersWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
 }

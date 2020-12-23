@@ -1,7 +1,17 @@
-.posts__block {
-	padding: 10px;
-}
-
 .posts {
 	margin-top: 10px;
+}
+
+textarea {
+	resize: none;
+	width: 280px;
+	height: 60px;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.postsBlock {
+	margin-top: 20px;
 }
