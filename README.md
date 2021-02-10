@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi! You can look demo at: https://aleksandrusa96.github.io/react-js-way-of-samurai/
 
 ## Available Scripts
 
